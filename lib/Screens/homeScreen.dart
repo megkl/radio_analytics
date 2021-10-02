@@ -140,7 +140,29 @@ class _HomeScreenState extends State<HomeScreen> {
               //padding: EdgeInsets.symmetric(vertical: 200),
               child: ListView(
                 //scrollDirection: Axis.horizontal,
-                children: [category1()],
+                children: [
+                  SizedBox(height: 10),
+                  category1(),
+                  SizedBox(height: 10),
+                  Container2(),
+                  SizedBox(height: 20),
+                  Container(
+                    margin: EdgeInsets.only(left: 20),
+                    child: RichText(
+                        //textAlign: TextAlign.center,
+                        text: TextSpan(
+                      text: 'Analytics ',
+                      style: GoogleFonts.portLligatSans(
+                        textStyle: Theme.of(context).textTheme.display1,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w700,
+                        color: Color(0xffe46b10),
+                      ),
+                    )),
+                  ),
+                  SizedBox(height: 10),
+                  Container3()
+                ],
               ),
             ),
             Container(
@@ -189,64 +211,373 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget category1() {
     return Container(
         margin: EdgeInsets.only(left: 10.0),
-        height: 80.0,
+        height: 50.0,
         child: new ListView(
           scrollDirection: Axis.horizontal,
           children: <Widget>[
             Container(
-              width: 160.0,
-             decoration:
-                  BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20)),
-              child: Center(child: Text("Morning Show")),
+              width: 120.0,
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(20)),
+              child: Center(
+                  child: Text(
+                "Morning Show",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+              )),
             ),
-            SizedBox(width: 20),
+            SizedBox(width: 10),
             Container(
-              decoration:
-                  BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20)),
-              width: 160.0,
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(20)),
+              width: 120.0,
               child: Center(child: Text("Breakfast Club")),
             ),
-            SizedBox(width: 20),
+            SizedBox(width: 10),
             Container(
-              width: 160.0,
-              decoration:
-                  BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20)),
+              width: 120.0,
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(20)),
               child: Center(child: Text("Afternoon Show")),
             ),
-            SizedBox(width: 20),
+            SizedBox(width: 10),
             Container(
-              width: 160.0,
-              decoration:
-                  BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20)),
+              width: 120.0,
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(20)),
               child: Center(child: Text("Evening Show")),
             ),
-            SizedBox(width: 20),
+            SizedBox(width: 10),
             Container(
-              width: 160.0,
-             decoration:
-                  BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20)),
+              width: 120.0,
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(20)),
               child: Center(child: Text("Late Night Show")),
             ),
           ],
         )); //height: MediaQuery.of(context).size.height*0.2,
   }
-// Container(
-  //   decoration: BoxDecoration(
-  //     borderRadius: BorderRadius.circular(20),
-  //     color: Color(0xffe46b10),
-  //   ),
-  //   height: 200,
-  //   width: 400,
-  //   child: carouselSlider),
 
+  Widget Container2() {
+    return Container(
+      height: 280,
+      margin: EdgeInsets.only(top: 10, left: 10, right: 10),
+      child: Container(
+        width: 120.0,
+        decoration: BoxDecoration(
+            color: Colors.white, borderRadius: BorderRadius.circular(10)),
+        child: Column(
+          children: [
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(left: 10, top: 10),
+                      child: Text(
+                        "Ksh 2,000,000",
+                        style: GoogleFonts.portLligatSans(
+                          textStyle: Theme.of(context).textTheme.display1,
+                          fontSize: 30,
+                          fontWeight: FontWeight.w700,
+                          color: Color(0xffe46b10),
+                        ),
+                      ),
+                    ),
+                    Container(
+                        margin: EdgeInsets.only(left: 10, top: 5, bottom: 10),
+                        child: Text("Kenyan Shillings",
+                            style: TextStyle(color: Colors.black38))),
+                  ],
+                ),
+                Container(
+                    margin: EdgeInsets.only(top: 10, left: 10),
+                    child: Icon(
+                      Icons.arrow_circle_down_rounded,
+                      color: Color(0xffe46b10),
+                    )),
+                Container(
+                  margin: EdgeInsets.only(top: 10, left: 120),
+                  child: Image.asset(
+                    "assets/stats.png",
+                    height: 40,
+                    width: 40,
+                  ),
+                )
+              ],
+            ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    InkWell(
+                        onTap: () {
+                          setState(() {
+                            //Navigator.push(context, new MaterialPageRoute(builder: (context) => HomeScreen()));
+                          });
+                        },
+                        child: Container(
+                          width: 150,
+                          height: 50,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              gradient: LinearGradient(
+                                  begin: Alignment.topCenter,
+                                  end: Alignment.bottomCenter,
+                                  colors: [
+                                    Color(0xfffbb448),
+                                    Color(0xffe46b10)
+                                  ])),
+                          child: Center(
+                            child: Text(
+                              "Grow Analysis",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        )),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    InkWell(
+                        onTap: () {
+                          setState(() {
+                            //Navigator.push(context, new MaterialPageRoute(builder: (context) => HomeScreen()));
+                          });
+                        },
+                        child: Container(
+                          width: 150,
+                          height: 50,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              gradient: LinearGradient(
+                                  begin: Alignment.topCenter,
+                                  end: Alignment.bottomCenter,
+                                  colors: [
+                                    Color(0xfffbb448),
+                                    Color(0xffe46b10)
+                                  ])),
+                          child: Center(
+                            child: Text(
+                              "Read More",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        )),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    InkWell(
+                        onTap: () {
+                          setState(() {
+                            //Navigator.push(context, new MaterialPageRoute(builder: (context) => HomeScreen()));
+                          });
+                        },
+                        child: Container(
+                          width: 50,
+                          height: 50,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              gradient: LinearGradient(
+                                  begin: Alignment.topCenter,
+                                  end: Alignment.bottomCenter,
+                                  colors: [
+                                    Color(0xfffbb448),
+                                    Color(0xffe46b10)
+                                  ])),
+                          child: Center(
+                            child: Text(
+                              "....",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        )),
+                  ],
+                ),
+              ],
+            ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    margin: EdgeInsets.only(top: 10),
+                    child: Text("Channels"),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Align(
+                    alignment: Alignment.topRight,
+                    child: Container(
+                      margin: EdgeInsets.only(top: 10, left: 270),
+                      child: Text(
+                        "See all",
+                        style: TextStyle(color: Color(0xffe46b10)),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 10),
+              child: Card(
+                child: ListTile(
+                  leading: Image.asset(
+                    "assets/stats2.png",
+                    height: 40,
+                    width: 40,
+                  ),
+                  title: Text(
+                    "Morning Show",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  subtitle: Text("Your breathtaking daily wakeup call"),
+                  trailing: Text(
+                    "Ksh 100,000",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget Container3() {
+    return Container(
+        margin: EdgeInsets.only(left: 10.0, top: 20),
+        height: 270.0,
+        child: new ListView(
+          scrollDirection: Axis.horizontal,
+          children: <Widget>[
+            Container(
+              width: 200.0,
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(10)),
+              child: Container(
+                  margin: EdgeInsets.only(left: 10,top: 10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Weekly Analysis",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black38),
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        "Ksh 20,000",
+                        style: GoogleFonts.portLligatSans(
+                          textStyle: Theme.of(context).textTheme.display1,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w700,
+                          color: Color(0xffe46b10),
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        "Data Analysis for the week",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black38),
+                      ),
+                      SizedBox(height: 20),
+                      Image.asset("assets/stats.png", height: 150, width: 150)
+                    ],
+                  )),
+            ),
+            SizedBox(width: 10),
+            Container(
+              width: 200.0,
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(10)),
+              child: Container(
+                  margin: EdgeInsets.only(left: 10,top: 10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Monthly Analysis",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black38),
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        "Ksh 100,000",
+                        style: GoogleFonts.portLligatSans(
+                          textStyle: Theme.of(context).textTheme.display1,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w700,
+                          color: Color(0xffe46b10),
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        "Data Analysis for the month",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black38),
+                      ),
+                      SizedBox(height: 20),
+                      Image.asset("assets/stats2.png", height: 150, width: 150)
+                    ],
+                  )),
+            ),
+           SizedBox(width: 10),
+            Container(
+              width: 200.0,
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(10)),
+              child: Container(
+                  margin: EdgeInsets.only(left: 10,top: 10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Annual Analysis",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black38),
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        "Ksh 2,000,000",
+                        style: GoogleFonts.portLligatSans(
+                          textStyle: Theme.of(context).textTheme.display1,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w700,
+                          color: Color(0xffe46b10),
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        "Data Analysis for the Year",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black38),
+                      ),
+                      SizedBox(height: 20),
+                      Image.asset("assets/stats.png", height: 150, width: 150)
+                    ],
+                  )),
+            ),
+           
+          ],
+        )); //height: Med
+  }
 }
